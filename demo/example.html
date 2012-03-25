@@ -1,0 +1,42 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Focus FF alerts</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <!--<script type="text/javascript" src="http://getfirebug.com/firebug-lite.js#startOpened=true"></script>-->
+  <script src="focusalerts.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+        $('body').delegate('.example', 'click', function (e) {
+            var url = $(e.target).data('url');
+            window.open('popups/' + url, 'example', 'height=280,width=280,scrollbars=yes,toolbars=no,location=no,resizable=yes,alwaysLowered=yes,status=no');
+        });
+      });
+  </script>
+  <style type="text/css">
+    .example { 
+      cursor: pointer;
+      width: 800px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div role="main">
+    <div class="alert">
+        <h3>alerts</h3>
+        <p class="example" data-url="alert.html">Click here to see a normal alert</p>
+        <p class="example" data-url="alerttimer.html">Click here to see a normal alert - after 3 seconds (focus another window and notice popup window doesn't focus?)</p>
+        <p class="example" data-url="oldalert.html">Click here to see a old alert</p>
+        <p class="example" data-url="oldalerttimer.html">Click here to see a old alert - after 3 seconds (click this window after you click and notice this popup window will have focus!)</p>
+      </div>
+    <div class="confirms">
+        <h3>confirms</h3>
+        <p class="example" data-url="confirm.html">Click here to see a normal confirm</p>
+        <p class="example" data-url="oldconfirm.html">Click here to see a old confirm</p>
+        <p class="example" data-url="oldconfirm_cancelcallback.html">Click here to see a old confirm - with cancel callback</p>
+        <p class="example" data-url="oldconfirm_okcallback.html">Click here to see a old confirm - with ok callback</p>
+        <p class="example" data-url="oldconfirmtimer.html">Click here to see a old confirm  - after 3 seconds (click this window after you click and notice this window will have focus!)</p>
+  </div>
+</body>
+</html>
