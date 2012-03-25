@@ -4,8 +4,10 @@
   <title></title>
   <script src="../../firefoxalerts.js"></script>
   <script type="text/javascript">
-      window.falert('Look at me, I have focus!');
-      window.close();
+      setTimeout(function () {
+          window.fconfirm('Would you like to continue?');
+          window.close();
+      }, 3000);
   </script>
 </head>
 <body>

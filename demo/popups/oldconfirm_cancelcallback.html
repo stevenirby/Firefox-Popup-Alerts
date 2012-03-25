@@ -4,7 +4,9 @@
   <title></title>
   <script src="../../firefoxalerts.js"></script>
   <script type="text/javascript">
-      window.falert('Look at me, I have focus!');
+      window.fconfirm('Would you like to continue?', null, function () {
+          alert('You clicked Cancel!');      
+      });
       window.close();
   </script>
 </head>
